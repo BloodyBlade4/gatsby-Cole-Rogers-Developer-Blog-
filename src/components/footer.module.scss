@@ -1,3 +1,31 @@
 .footer {
     margin-top: 100rem; // 3rem
 }
+.nav-list {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgb(230,230,230);
+    display: flex; //stack items left to right
+    list-style-type: none; //remove bulletpoints
+    margin: 0; //remove margin shifts that lists typically get.
+}
+
+.nav-item {
+    color: #999999;
+    font-size: .9rem;
+    margin-right: 1.3rem;
+    text-decoration: none; //remove underline
+}
+
+//darkens color of text on hover.
+.nav-item:hover {
+    color: #666666;
+}
+
+//darken selected page text
+.active-nav-item {
+    color: #333333;
+}

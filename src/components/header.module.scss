@@ -1,6 +1,25 @@
 .header {
+    position: absolute;
     padding: 1rem 0 3rem;
+    background: fixed;
+    background-color: transparent;
+}
 
+.headerScrolling {
+    position: fixed;
+    //padding: 1rem 0 3rem;
+    background: fixed;
+    
+    
+}
+
+.containerForeground {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
 }
 
 .title {

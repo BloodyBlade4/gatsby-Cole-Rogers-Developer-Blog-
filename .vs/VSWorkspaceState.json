@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\images",
     "\\src\\pages",
     "\\src\\styles",
     "\\src\\templates"
   ],
+  "SelectedNode": "\\src\\pages\\blog.module.scss",
   "PreviewInSolutionExplorer": false
 }

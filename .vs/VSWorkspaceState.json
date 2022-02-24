@@ -3,11 +3,11 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\images",
     "\\src\\pages",
     "\\src\\styles",
-    "\\src\\templates"
+    "\\src\\templates",
+    "\\static"
   ],
-  "SelectedNode": "\\src\\pages\\blog.module.scss",
+  "SelectedNode": "\\src\\components\\scrollPosition.js",
   "PreviewInSolutionExplorer": false
 }

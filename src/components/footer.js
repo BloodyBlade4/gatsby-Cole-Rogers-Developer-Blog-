@@ -1,7 +1,11 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import * as footerStyles from './footer.module.scss'
+
+const logoLinkedIn = '../images/logoLinkedin.png'
+const logoHandshake = '../images/logoHandshake.png'
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -21,46 +25,68 @@ const Footer = () => {
                 left: 0,
                 bottom: 0,
                 right: 0,
-                height: '60px',
-                backgroundColor: 'rgb(230,230,230)',
+                height: '100px',
+                backgroundColor: '#89BAF0',
+                borderTop: '3px solid rgba(0,0,0,.6)',
                 display: 'flex', //stack items left to right
                 listStyleType: 'none', //remove bulletpoints
-                //margin: 0 //remove margin shifts that lists typically get.
             }} >
-                <div style={{
-                    color: 'black',
-                    fontSize: '.9rem',
-                    marginLeft: '3rem',
-                    position: 'absolute',
-                    left: '0',
-                    textDecoration: 'none'
-                }}>
-                    <p> TODO: links to media </p>
-                </div>
+                
 
 
-
-
+                <ul className={footerStyles.navList}>
+                    <li className={footerStyles.listItem} >
+                        Social media:
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/cole-rogers-70029816a/" target="_blank"
+                        rel="noopener noreferrer">
+                            <StaticImage
+                                src={logoLinkedIn}
+                                alt="LinkedIn Logo Image"
+                                placeholder="blurred"
+                                className={footerStyles.logoLink}
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://app.joinhandshake.com/stu/users/26474767" target="_blank"
+                        rel="noopener noreferrer">
+                            <StaticImage
+                                src={logoHandshake}
+                                alt="Handshake Logo Image"
+                                placeholder="blurred"
+                                className={footerStyles.logoLink}
+                            />
+                        </a>
+                    </li>
                     
-                <div style={{
-                    color: 'black',
-                    fontSize: '.9rem',
-                    marginRight: '3rem',
-                    marginTop: '0',
-                    marginBottom: '0',
+                </ul>
+                <p style={{
                     position: 'absolute',
-                    right: '0',
-                    textDecoration: 'none'
+                    right: 0
                 }}>
-                    <p style={{ marginTop: '0', marginBottom: '0' }}>
-                        Here are links to social media </p>
-                    <p style={{ marginTop: '0', marginBottom: '0' }}>
-                        Created by {data.site.siteMetadata.author}, Copyright 2022 </p>
-                    
-                </div>
+                    Created by {data.site.siteMetadata.author}, Copyright 2022
+                </p>
+                
+                
             </div>
         </footer>
         )
 }
+/* TODO!!!! LINK TO PROJECT WHEN YOU HAVE ONE DONE!
+ const logoGitHub = '../images/logoGitHub.png'
+<li>
+    <a href="   " target="_blank">
+        <StaticImage
+            src={logoGitHub}
+            alt="Git Hub Logo Image"
+            placeholder="blurred"
+            //Styles that meet Linkedin's requests for appearance, as of 2/22/2022
+            className={footerStyles.logoLink}
+        />
+    </a>
+</li>
+*/
 
 export default Footer

@@ -5,56 +5,34 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    min-height:10vh;
-
+    min-height: 10vh;
 }
 
-.content {
-    flex-grow: 1;
-    z-index: 1;
-    background: none;
-    padding: 7px 14px 10px;
-}
-
-.headerContent {
-    margin: 0 auto;
+//The blue column background behind the content (text, posts, etc) on each page.
+.containerColumnBackground {
     max-width: 750px;
-    padding: 0rem;
-    display: flex;
     flex-direction: column;
-    min-height: 0vh;
-
-    flex-grow: 1;
-    z-index: 2;
-}
-.containerBackgroundImage {
-    background-size:cover;
+    padding: 2rem;
     background-position-x: center;
-    top:0;
-    display: block;
-    background: inherit;
-
-    margin:0;
-    height: 150vh;
-
-
-    overflow-x: hidden;
+    background-color: #89BAF0;
 }
 
 
 
-.containerSpacing {
-    min-height: 30rem;
+//used on layout pages, to account for the room the header takes up.
+.headerBlock {
+    height: 15vh;
 }
 
+//Used below homeLayout image as a gradient effect.
+.verticalGradientColor {
+    height: 10rem;
+    background-image: linear-gradient(#89BAF0, #A3834D);
+}
+
+//homeLayout image style
 .backgroundImage {
-    background-size: cover;
-    background-position-x: center;
-
-    top: 0;
-    display: block;
-    background: inherit;
-    margin: 0;
     height: 150vh;
     overflow-x: hidden;
 }
+

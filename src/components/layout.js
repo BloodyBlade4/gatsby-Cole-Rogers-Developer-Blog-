@@ -7,20 +7,15 @@ import * as layoutStyles from './layout.module.scss'
 
 const Layout = (props) => {
     return (
-        <div>
+        <div style={{ backgroundColor: '#A3834D', minHeight: '100vh', boxSizing: 'border-box' }}>
             <div className={layoutStyles.container}>
-                <div className={layoutStyles.content} >
-                    <Header />
 
-                </div>
-            </div>
-
-            <div className={layoutStyles.container}>
-                <div className={layoutStyles.content} >
-
+                <Header />
+                <div className={layoutStyles.headerBlock} />
+                <div className={layoutStyles.containerColumnBackground}>
                     {props.children}
-                    
                 </div>
+                   
                 
             </div>
             <Footer />

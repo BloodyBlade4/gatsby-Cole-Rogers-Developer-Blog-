@@ -1,23 +1,33 @@
 .footer {
     margin-top: 100rem; // 3rem
 }
+
+.logoLink {
+    padding: 5px;
+    min-height: 21px;
+    min-width: 21px;
+    max-height: 32px;
+    width: 30px;
+    height: 30px;
+    margin-left: 1.3rem;
+    background-color: white;
+    border: .05px ridge black;
+}
+
 .nav-list {
     position: absolute;
     left: 0;
     bottom: 0;
-    right: 0;
+    right:0;
     height: 60px;
-    background-color: rgb(230,230,230);
     display: flex; //stack items left to right
     list-style-type: none; //remove bulletpoints
     margin: 0; //remove margin shifts that lists typically get.
 }
 
 .nav-item {
-    color: #999999;
     font-size: .9rem;
-    margin-right: 1.3rem;
-    text-decoration: none; //remove underline
+    margin-left: 1.3rem;
 }
 
 //darkens color of text on hover.
@@ -26,6 +36,9 @@
 }
 
 //darken selected page text
-.active-nav-item {
-    color: #333333;
+.listItem {
+    color: black;
+    font-size: .9rem;
+    margin-left: 1.3rem;
+    text-decoration: none;
 }

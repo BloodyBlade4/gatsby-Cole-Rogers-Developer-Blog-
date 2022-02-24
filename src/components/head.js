@@ -1,7 +1,6 @@
-//manages the head of document
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 
 const Head = ({ title }) => {
@@ -13,10 +12,12 @@ const Head = ({ title }) => {
                 }
             }
         }
-`)
-    return (
-        <Helmet title={`${title} | ${data.site.siteMetadata.title}`}/>
-    )
-}
+`);
 
-export default Head
+
+    return (
+        <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />
+    )
+};
+
+export default Head;

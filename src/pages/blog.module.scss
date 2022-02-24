@@ -1,23 +1,40 @@
-
+//styling component for individual blog posts. 
 .posts {
+    
+    padding: 1rem;
     list-style-type: none;
     margin: 0;
-
 }
 
 .post {
     margin: 1rem 0;
+    border: 2px solid;
 
     a { //anchored
-        background: #f4f4f4;
         color: #000000;
         display: block;
         padding: 1rem;
+        position: relative;
+        z-index: 1;
         text-decoration: none;
+        overflow: hidden;
     }
 
-    a:hover {
-        background: #e4e4e4;
+
+    a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        background: linear-gradient( #3C6EA3, #3C6EA3, #F0CB8A );
+        transition: transform 0.5s;
+        z-index: -1;
+    }
+
+    a:hover::before {
+        transform: translateY(-50%);
     }
 
     h2 {
@@ -29,10 +46,10 @@
         font-size: .8rem;
         font-style: italic;
     }
-
 }
 
-.postImage {
-    object-fit: fill;
-    
-}
+
+
+    .postImage {
+        object-fit: fill;
+    }

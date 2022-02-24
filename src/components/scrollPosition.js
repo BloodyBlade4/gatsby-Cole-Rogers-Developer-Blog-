@@ -1,8 +1,10 @@
+//source/credit to: Ferran Buireu, who may have gotten it from flaviocopes.com, who may have...
+
 import { useLayoutEffect, useRef } from 'react';
 
 const isBrowser = typeof window !== `undefined`;
 
-const getScrollPositiong = ({ element, useWindow }) => {
+const getScrollPosition = ({ element, useWindow }) => {
     if (!isBrowser) return { x: 0, y: 0 };
 
     const target = element ? element.current : document.body,
@@ -11,15 +13,14 @@ const getScrollPositiong = ({ element, useWindow }) => {
     return useWindow
         ? { x: window.scrollX, y: window.scrollY }
         : { x: position.left, y: position.top };
-
-}
+};
 
 export const useScrollPosition = (effect, deps, element, useWindow, wait) => {
-    const position = useRef(getScrollPositiong({ useWindow }));
+    const position = useRef(getScrollPosition({ useWindow }));
     let throttleTimeout = null;
 
     const callBack = () => {
-        const currentPosition = getScrollPositiong({ element, useWindow });
+        const currentPosition = getScrollPosition({ element, useWindow });
 
         effect({ previousPosition: position.current, currentPosition: currentPosition });
         position.current = currentPosition;
@@ -37,4 +38,3 @@ export const useScrollPosition = (effect, deps, element, useWindow, wait) => {
         return () => window.removeEventListener(`scroll`, handleScroll);
     }, deps);
 };
-

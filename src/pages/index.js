@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/homeLayout'
 import Head from '../components/head'
 import * as blogStyles from './blog.module.scss'
+import { GetRichText } from '../components/getRichText'
 
 
 const HomePage = () => {
@@ -38,26 +39,8 @@ const HomePage = () => {
     return (
         <Layout>
             <Head title="Home" />
-            <h1>Hello,</h1>
-            <p> I'm Cole, an ECE student at The University of Arizona. </p>
-            <p>
-                    This blog was made to gain experience in development skills and get a taste of AWS services.
-                In the future, I will be uploading projects here to show case programming skills, share how I've overcome
-                difficult roadblocks, and maybe have a little fun. I have a few future projects in mind, which include:
-            </p>
-            <ol style={{borderBottom: '2px solid'}}>
-                <li>
-                    Touch up details on this site (additional features,
-                    develop immaculate (clean) code, and experiment more with AWS)</li>
-                <li>
-                    IOS application: medication reminder, daily mood diary, period chart
-                    (every available app has difficulty giving proper and relaiable notifications/reminders) </li>
-                <li>
-                    C# 3D Video Game: role-playing, social, city builder
-                    (Already in development. Put on the back burner temporarily to get some smaller projects
-                    done for resume purposes.) </li>
-            </ol>
 
+            <GetRichText name='home'/>
             
             <h1>Blog</h1>
             <ol className={blogStyles.posts}>

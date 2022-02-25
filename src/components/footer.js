@@ -6,6 +6,7 @@ import * as footerStyles from './footer.module.scss'
 
 const logoLinkedIn = '../images/logoLinkedin.png'
 const logoHandshake = '../images/logoHandshake.png'
+const logoGitHub = '../images/logoGitHub.png'
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -60,13 +61,26 @@ const Footer = () => {
                             />
                         </a>
                     </li>
+                    <li>
+                         
+                        <a href="https://github.com/BloodyBlade4/gatsby-Cole-Rogers-Developer-Blog-"
+                            target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                //TODO:Get the link
+                                src={logoGitHub}
+                                alt="Git Hub Logo Image"
+                                placeholder="blurred"
+                                className={footerStyles.logoLink}
+                            />
+                        </a>
+                    </li>
                     
                 </ul>
                 <p style={{
                     position: 'absolute',
                     right: 0
                 }}>
-                    Created by {data.site.siteMetadata.author}, Copyright 2022
+                    Created by {data.site.siteMetadata.author}
                 </p>
                 
                 
@@ -75,18 +89,8 @@ const Footer = () => {
         )
 }
 /* TODO!!!! LINK TO PROJECT WHEN YOU HAVE ONE DONE!
- const logoGitHub = '../images/logoGitHub.png'
-<li>
-    <a href="   " target="_blank">
-        <StaticImage
-            src={logoGitHub}
-            alt="Git Hub Logo Image"
-            placeholder="blurred"
-            //Styles that meet Linkedin's requests for appearance, as of 2/22/2022
-            className={footerStyles.logoLink}
-        />
-    </a>
-</li>
+ 
+
 */
 
 export default Footer

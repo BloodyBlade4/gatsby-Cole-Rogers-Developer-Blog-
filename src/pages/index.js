@@ -46,7 +46,7 @@ const HomePage = () => {
             <ol className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map((edge) => { //Getting each variable in an array of edges. passing thorugh "edge"
                     return (
-                        <li className={blogStyles.post}>
+                        <li className={blogStyles.post} key={edge.node.slug}>
                                 
                             <Link to={`/blog/${edge.node.slug}`}>
                                 <h2> {edge.node.title} </h2>

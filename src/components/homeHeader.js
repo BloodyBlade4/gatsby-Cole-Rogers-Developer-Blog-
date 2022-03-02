@@ -25,8 +25,8 @@ const HomeHeader = () => {
 
     return (
         <header style={{
-            position: 'fixed', 
-            backgroundColor : `rgba(137, 186, 240, ${scroll * -.001})`,
+            position: 'fixed',
+            backgroundColor: `rgba(137, 186, 240, ${scroll * -.001})`,
             borderBottom: `3px solid rgba(0, 0, 0, ${scroll * -.0008}`,
             minWidth: 'auto',
             left: 0,
@@ -45,7 +45,7 @@ const HomeHeader = () => {
                     <li>
                         <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about"> About Me </Link>
                     </li>
-                    
+
                 </ul>
             </nav>
 

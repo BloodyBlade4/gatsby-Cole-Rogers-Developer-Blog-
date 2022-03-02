@@ -1,9 +1,9 @@
 During this personal project, I learned new languages (Node.js, css), tackled the React library, 
-worked to continuously make code cleaner and less dependent, and implented AWS services to host and
+worked to continuously make code cleaner, and implented AWS services to host and
 (continue to) optimize this blog. 
 
 I will continue to:
-	1. Optimize the code, remove dependencies, and create a clean flow. 
+	1. Optimize the code and create a clean flow. 
 	2. Update this blog with new projects and development examples as they come. 
 
 

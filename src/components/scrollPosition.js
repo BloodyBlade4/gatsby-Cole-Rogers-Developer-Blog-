@@ -17,19 +17,19 @@ const getScrollPosition = ({ element, useWindow }) => {
 
 export const useScrollPosition = (effect, deps, element, useWindow, wait) => {
     const position = useRef(getScrollPosition({ useWindow }));
-    let throttleTimeout = null;
+    let throttleTimeout = useRef(null);
 
     const callBack = () => {
         const currentPosition = getScrollPosition({ element, useWindow });
 
         effect({ previousPosition: position.current, currentPosition: currentPosition });
         position.current = currentPosition;
-        throttleTimeout = null;
+        throttleTimeout.current = null;
     };
 
     useLayoutEffect(() => {
         const handleScroll = () => {
-            if (wait && !throttleTimeout) throttleTimeout = setTimeout(callBack, wait);
+            if (wait && !throttleTimeout) throttleTimeout.current = setTimeout(callBack, wait);
             else callBack();
         };
 

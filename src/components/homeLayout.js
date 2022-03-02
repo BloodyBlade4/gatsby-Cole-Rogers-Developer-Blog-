@@ -14,6 +14,7 @@ const homeImage = '../images/Mountains.JPG'
 const Layout = (props  ) => {
     return (
         <div style={{ backgroundColor: '#A3834D' }}>
+            <HomeHeader />
             <StaticImage
                 src={homeImage}
                 alt="Home Page Image"
@@ -25,7 +26,7 @@ const Layout = (props  ) => {
             
             <div className={layoutStyles.container}>
 
-                <HomeHeader />
+                
                 <div className={layoutStyles.containerColumnBackground}>
                     {props.children}
                 </div>

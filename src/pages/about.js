@@ -8,7 +8,8 @@ import { GetRichText } from '../components/getRichText'
 const AboutPage = () => {
     return (
 
-        <Layout> 
+        <Layout>
+            <Head title="About"/>
             <GetRichText name='about'/>
 
             <h1 style={{ textAlign: 'center' }}> Contact Me:</h1>

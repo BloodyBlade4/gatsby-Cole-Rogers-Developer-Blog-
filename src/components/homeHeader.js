@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-
 import * as headerStyles from './header.module.scss'
-import { useScrollPosition } from './scrollPosition'
+
 
 const HomeHeader = () => {
     const data = useStaticQuery(graphql`
@@ -16,28 +15,37 @@ const HomeHeader = () => {
         }
     `)
 
-    const [scroll, setScroll] = useState(0);
-
-    useScrollPosition(function setScrollPosition({ currentPosition }) {
-        setScroll(currentPosition.y);
+    //Header background color details.
+    window.addEventListener('scroll', (event) => {
+        let scroll = window.pageYOffset;
+        //console.log(scroll);
+        let scrollValue = document.querySelector(".scrollValue");
+        if (scrollValue) {
+            scrollValue.style.backgroundColor = `rgba(137, 186, 240, ${scroll * .001})`;
+            scrollValue.style.borderBottom = `3px solid rgba(0, 0, 0, ${scroll * .0008}`;
+        }
+        else {
+            scrollValue.style.backgroundColor = '#89BAF0';
+            scrollValue.style.borderBottom = '3px solid rgb(0,0,0)'
+        }
     })
-
-
     return (
-        <header style={{
+        <header className="scrollValue" style={{
             position: 'fixed',
-            backgroundColor: `rgba(137, 186, 240, ${scroll * -.001})`,
-            borderBottom: `3px solid rgba(0, 0, 0, ${scroll * -.0008}`,
-            minWidth: 'auto',
+
+            Width: '100%',
             left: 0,
             right: 0,
             top: 0,
-            zIndex: 20,
-        }} >
+            zIndex: 5,
+            fontSize: '2rem',
+        }}>
+
             <h1 style={{ textAlign: 'center' }}> <Link className={headerStyles.title} to='/'>
                 {data.site.siteMetadata.title} </Link>
             </h1>
             <nav>
+                
                 <ul className={headerStyles.navList}>
                     <li>
                         <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/"> Home </Link>

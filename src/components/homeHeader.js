@@ -16,19 +16,22 @@ const HomeHeader = () => {
     `)
 
     //Header background color details.
-    window.addEventListener('scroll', (event) => {
-        let scroll = window.pageYOffset;
-        //console.log(scroll);
-        let scrollValue = document.querySelector(".scrollValue");
-        if (scrollValue) {
-            scrollValue.style.backgroundColor = `rgba(137, 186, 240, ${scroll * .001})`;
-            scrollValue.style.borderBottom = `3px solid rgba(0, 0, 0, ${scroll * .0008}`;
-        }
-        else {
-            scrollValue.style.backgroundColor = '#89BAF0';
-            scrollValue.style.borderBottom = '3px solid rgb(0,0,0)'
-        }
-    })
+    const isBrowser = typeof window !== "undefined";
+    if (isBrowser) {
+        window.addEventListener('scroll', (event) => {
+            let scroll = window.pageYOffset;
+            //console.log(scroll);
+            let scrollValue = document.querySelector(".scrollValue");
+            if (scrollValue) {
+                scrollValue.style.backgroundColor = `rgba(137, 186, 240, ${scroll * .001})`;
+                scrollValue.style.borderBottom = `3px solid rgba(0, 0, 0, ${scroll * .0008}`;
+            }
+            else {
+                scrollValue.style.backgroundColor = '#89BAF0';
+                scrollValue.style.borderBottom = '3px solid rgb(0,0,0)'
+            }
+        })
+    }
     return (
         <header className="scrollValue" style={{
             position: 'fixed',
